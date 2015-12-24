@@ -1,6 +1,4 @@
-#!/bin/bash
-. /opt/farm/scripts/init
-
+#!/bin/sh
 
 provider="wppl"
 
