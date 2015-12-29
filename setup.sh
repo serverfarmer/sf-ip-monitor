@@ -13,5 +13,5 @@ if ! grep -q /opt/sf-ip-monitor/cron/check.sh /etc/crontab && [ "$IP" != "" ]; t
 fi
 
 if ! grep -q /opt/sf-ip-monitor/cron/report.sh /etc/crontab && [ -d /etc/NetworkManager ]; then
-	echo "34 18 * * * root /opt/sf-ip-monitor/cron/report.sh $IP" >>/etc/crontab
+	echo "34 18 * * * root /opt/sf-ip-monitor/cron/report.sh" >>/etc/crontab
 fi
