@@ -18,13 +18,13 @@ if [ ! -s $FILE.current ]; then
 fi
 
 # not all connections succeed, especially for some providers
-/opt/sf-ip-monitor/providers/$provider.sh >$FILE.new
+/opt/farm/ext/ip-monitor/providers/$provider.sh >$FILE.new
 if [ ! -s $FILE.new ]; then exit; fi
 
 # if current IP differs from previous one, trigger notifications
 diff -u $FILE.current $FILE.new >$FILE.diff
 if [ -s $FILE.diff ]; then
-	/opt/sf-sms-smsapi/sms.sh $phone "`hostname` detected external IP change to `cat $FILE.new`" >>$FILE.diff
+	/opt/farm/ext/sms-smsapi/sms.sh $phone "`hostname` detected external IP change to `cat $FILE.new`" >>$FILE.diff
 	cat $FILE.diff |mail -s "External IP change [`hostname`]" $email
 	mv -f $FILE.new $FILE.current
 fi

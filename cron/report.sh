@@ -26,7 +26,7 @@ subject=`echo "$template" |sed s/%%host%%/$host/g`
 (
 
 echo -n "External IP: "
-/opt/sf-ip-monitor/providers/$provider.sh
+/opt/farm/ext/ip-monitor/providers/$provider.sh
 echo
 echo
 /sbin/ifconfig -a |grep -v 127.0.0 |grep -B1 "inet addr"
