@@ -36,5 +36,8 @@ echo
 echo
 echo
 /usr/sbin/arp -na
+echo
+echo
+/sbin/iptables -nvL
 
 ) |mail -s "$subject" $rcpt
