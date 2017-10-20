@@ -3,7 +3,7 @@
 provider="wppl"
 
 
-/opt/farm/scripts/setup/role.sh sf-sms-smsapi
+/opt/farm/scripts/setup/extension.sh sf-sms-smsapi
 
 IP=`/opt/farm/ext/ip-monitor/providers/$provider.sh`
 
