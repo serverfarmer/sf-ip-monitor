@@ -5,7 +5,7 @@
 # Tomasz Klim, 2009-2011, Dec 2015
 
 
-provider="wppl"
+provider="ifconfig"
 
 
 if [ "$1" != "" ]; then
@@ -29,7 +29,11 @@ echo -n "External IP: "
 /opt/farm/ext/ip-monitor/providers/$provider.sh
 echo
 echo
-/sbin/ifconfig -a |grep -v 127.0.0 |grep -B1 "inet addr"
+if [ -x /sbin/ifconfig ]; then
+	/sbin/ifconfig -a |grep -v 127.0.0 |grep -B1 "inet addr"
+else
+	/sbin/ip addr |grep -v 127.0.0 |grep -B2 "inet "
+fi
 echo
 echo
 /sbin/route -ne

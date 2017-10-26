@@ -1,6 +1,6 @@
 #!/bin/sh
 
-provider="wppl"
+provider="ifconfig"
 
 
 /opt/farm/scripts/setup/extension.sh sf-sms-smsapi

@@ -6,7 +6,7 @@
 
 phone="`notify_phone`"
 email="external-ip@`external_domain`"
-provider="wppl"
+provider="ifconfig"
 
 OLDIP="$1"
 FILE="/var/cache/cacti/external-ip"
