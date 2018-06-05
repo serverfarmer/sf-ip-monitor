@@ -3,6 +3,7 @@
 provider="ifconfig"
 
 
+/opt/farm/scripts/setup/extension.sh sf-cache-utils
 /opt/farm/scripts/setup/extension.sh sf-sms-smsapi
 
 IP=`/opt/farm/ext/ip-monitor/providers/$provider.sh`
