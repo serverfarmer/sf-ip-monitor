@@ -10,7 +10,7 @@ if [ ! -f $current ]; then
 	/opt/farm/ext/net-utils/external/ip.sh >$current
 fi
 
-if [ ! -f $phone ]; then
+if [ ! -f $phone ] && tty -s; then
 	if [ "$PHONE_NUMBER" = "" ]; then
 		read -p "phone number for admin notifications (using smsapi.pl) - 9 digits, or empty to disable notifications: " PHONE_NUMBER
 	fi
