@@ -7,7 +7,7 @@ phone="/etc/local/.config/notify.phone"
 current="/etc/local/.config/external.ip"
 
 if [ ! -f $current ]; then
-	/opt/farm/ext/net-utils/external/ip.sh >$current
+	/opt/farm/ext/net-utils/get-external-ip.sh >$current
 fi
 
 if [ ! -f $phone ] && tty -s; then

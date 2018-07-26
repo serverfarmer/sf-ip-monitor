@@ -8,7 +8,7 @@ file="/var/cache/cacti/external-ip"
 current="/etc/local/.config/external.ip"
 
 # not all connections succeed, especially for some providers
-/opt/farm/ext/net-utils/external/ip.sh >$file.new
+/opt/farm/ext/net-utils/get-external-ip.sh >$file.new
 if [ ! -s $file.new ]; then exit; fi
 
 # if current IP differs from previous one, trigger notifications

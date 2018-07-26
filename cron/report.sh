@@ -23,7 +23,7 @@ subject=`echo "$template" |sed s/%%host%%/$host/g`
 (
 
 echo -n "External IP: "
-/opt/farm/ext/net-utils/external/ip.sh
+/opt/farm/ext/net-utils/get-external-ip.sh
 echo
 echo
 if [ -x /sbin/ifconfig ]; then
