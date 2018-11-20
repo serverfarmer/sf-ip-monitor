@@ -26,11 +26,11 @@ echo -n "External IP: "
 /opt/farm/ext/net-utils/get-external-ip.sh
 echo
 echo
-if [ -x /sbin/ifconfig ]; then
-	/sbin/ifconfig -a |grep -v 127.0.0 |grep -B1 inet
-else
-	/sbin/ip addr |grep -v 127.0.0 |grep -B2 "inet "
-fi
+ifs=`/opt/farm/ext/net-utils/list-active-interfaces.sh`
+for interface in $ifs; do
+	ip=`/opt/farm/ext/net-utils/get-interface-ip.sh $interface`
+	echo "$interface: $ip"
+done
 echo
 echo
 /sbin/route -ne
