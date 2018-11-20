@@ -27,7 +27,7 @@ echo -n "External IP: "
 echo
 echo
 if [ -x /sbin/ifconfig ]; then
-	/sbin/ifconfig -a |grep -v 127.0.0 |grep -B1 "inet addr"
+	/sbin/ifconfig -a |grep -v 127.0.0 |grep -B1 inet
 else
 	/sbin/ip addr |grep -v 127.0.0 |grep -B2 "inet "
 fi
