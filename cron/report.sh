@@ -42,7 +42,7 @@ echo
 /sbin/iptables -nvL
 echo
 echo
-netstat -nap |grep -v ^unix
+netstat -nap 2>/dev/null |grep -v ^unix
 echo
 echo
 if [ -x /usr/bin/smbstatus ]; then
