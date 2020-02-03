@@ -1,5 +1,4 @@
-#!/bin/bash
-. /opt/farm/scripts/functions.custom
+#!/bin/sh
 # check if external IP address changed without announcements
 # Tomasz Klim, Sep 2013, Mar 2015, Dec 2015, Jul 2018
 
@@ -20,6 +19,6 @@ if [ -s $file.diff ]; then
 		/opt/farm/ext/sms-smsapi/sms.sh $phone "`hostname` detected external IP change to `cat $file.new`" >>$file.diff
 	fi
 
-	cat $file.diff |mail -s "External IP change [`hostname`]" "external-ip@`external_domain`"
+	cat $file.diff |mail -s "External IP change [`hostname`]" "external-ip@`/opt/farm/config/get-external-domain.sh`"
 	mv -f $file.new $current
 fi
